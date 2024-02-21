@@ -17,6 +17,19 @@ function solution(s) {
 
     // 현재 읽은 글자의 수가 같을 때 분해
     if (value === otherValue) {
+      // 분해된 문자열을 배열에 추가
+      answer.push(s.slice(start, i + 1));
+      // 다음 문자열 시작 인덱스 업뎃 후 변수 초기화
+      start = i + 1;
+      count = 0;
+      value = 0;
+      otherValue = 0;
     }
   }
+  // 남은 문자열이 있고 value와 otherValue가 다르면 분해
+  if (start < s.length && value !== otherValue) {
+    answer.push(s.slice(start));
+  }
+
+  return answer.length;
 }
