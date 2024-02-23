@@ -12,7 +12,23 @@ function solution(keymap, targets) {
 
       // 배열 순회 -> 현재 문자 찾기
       for (const key of keymap) {
+        const index = key.indexOf(char);
+
+        if (index !== -1) {
+          totalPressCount += index + 1;
+          found = true;
+          break;
+        }
+      }
+
+      if (!found) {
+        totalPressCount = -1;
+        break;
       }
     }
+
+    answer.push(totalPressCount);
   }
+
+  return answer;
 }
