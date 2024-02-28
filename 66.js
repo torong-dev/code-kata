@@ -1,3 +1,4 @@
+// 대충 만든 자판
 function solution(keymap, targets) {
   let answer = [];
 
