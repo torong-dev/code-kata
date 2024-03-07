@@ -53,6 +53,37 @@ function solution(survey, choices) {
   }
 
   // 객체에 담겨 있는 mbti 이름 각각 비교
+  let RT;
+  if (mbti["R"] !== mbti["T"]) {
+    RT = mbti["R"] > mbti["T"] ? "R" : "T";
+  } else {
+    RT = "R" < "T" ? "R" : "T";
+  }
+  answer += RT;
+
+  let CF;
+  if (mbti["C"] !== mbti["F"]) {
+    CF = mbti["C"] > mbti["F"] ? "C" : "F";
+  } else {
+    CF = "C" < "F" ? "C" : "F";
+  }
+  answer += CF;
+
+  let JM;
+  if (mbti["J"] !== mbti["M"]) {
+    JM = mbti["J"] > mbti["M"] ? "J" : "M";
+  } else {
+    JM = "J" < "M" ? "J" : "M";
+  }
+  answer += JM;
+
+  let AN;
+  if (mbti["A"] !== mbti["N"]) {
+    AN = mbti["A"] > mbti["N"] ? "A" : "N";
+  } else {
+    AN = "A" < "N" ? "A" : "N";
+  }
+  answer += AN;
 
   return answer;
 }
